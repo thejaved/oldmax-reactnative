@@ -1,33 +1,77 @@
 import {
+  responsiveFontSize,
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {colors} from '../config';
-import {Home, Profile} from '../screens';
+import {Create, Home, Profile} from '../screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import {TouchableOpacity, View} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
-function AppBottomTabs() {
+function AppBottomTabs(props: any) {
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarActiveTintColor: colors.primary,
         tabBarStyle: {
-          position: 'absolute',
-          left: 10,
-          right: 10,
-          bottom: responsiveHeight(3),
+          height: responsiveHeight(10),
           borderTopWidth: 0,
           backgroundColor: colors.bgSecond,
-          borderRadius: responsiveWidth(100),
-          alignItems: 'center',
-          justifyContent: 'center',
         },
       }}>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Settings" component={Profile} />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <AntDesign name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Create"
+        component={Home}
+        options={{
+          tabBarIcon: () => (
+            <View
+              style={{
+                position: 'absolute',
+                padding: responsiveWidth(2),
+                backgroundColor: colors.bgColor,
+                bottom: responsiveHeight(1.5),
+                borderRadius: responsiveWidth(15),
+              }}>
+              <TouchableOpacity
+                style={{
+                  padding: responsiveWidth(5),
+                  borderRadius: responsiveWidth(15),
+                  backgroundColor: colors.primary,
+                }}
+                onPress={() => props.navigation.navigate('Create')}>
+                <AntDesign
+                  name="plus"
+                  size={responsiveFontSize(3)}
+                  color={colors.white}
+                />
+              </TouchableOpacity>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <AntDesign name="profile" size={size} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
