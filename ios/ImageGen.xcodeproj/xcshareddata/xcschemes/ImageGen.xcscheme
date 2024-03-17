@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ImageGen.app"
-               BlueprintName = "ImageGen"
-               ReferencedContainer = "container:ImageGen.xcodeproj">
+               BuildableName = "Oldmax.app"
+               BlueprintName = "Oldmax"
+               ReferencedContainer = "container:Oldmax.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ImageGenTests.xctest"
-               BlueprintName = "ImageGenTests"
-               ReferencedContainer = "container:ImageGen.xcodeproj">
+               BuildableName = "OldmaxTests.xctest"
+               BlueprintName = "OldmaxTests"
+               ReferencedContainer = "container:Oldmax.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ImageGen.app"
-            BlueprintName = "ImageGen"
-            ReferencedContainer = "container:ImageGen.xcodeproj">
+            BuildableName = "Oldmax.app"
+            BlueprintName = "Oldmax"
+            ReferencedContainer = "container:Oldmax.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ImageGen.app"
-            BlueprintName = "ImageGen"
-            ReferencedContainer = "container:ImageGen.xcodeproj">
+            BuildableName = "Oldmax.app"
+            BlueprintName = "Oldmax"
+            ReferencedContainer = "container:Oldmax.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

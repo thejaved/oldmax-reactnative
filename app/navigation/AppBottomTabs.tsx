@@ -4,7 +4,7 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {colors} from '../config';
-import {Create, Home, Profile} from '../screens';
+import {Favorite, Home, Message, Profile} from '../screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {TouchableOpacity, View} from 'react-native';
@@ -30,6 +30,15 @@ function AppBottomTabs(props: any) {
         options={{
           tabBarIcon: ({color, size}) => (
             <AntDesign name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Message"
+        component={Message}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <AntDesign name="message1" size={size} color={color} />
           ),
         }}
       />
@@ -64,11 +73,20 @@ function AppBottomTabs(props: any) {
         }}
       />
       <Tab.Screen
+        name="Favorite"
+        component={Favorite}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <AntDesign name="hearto" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
           tabBarIcon: ({color, size}) => (
-            <AntDesign name="profile" size={size} color={color} />
+            <AntDesign name="user" size={size} color={color} />
           ),
         }}
       />

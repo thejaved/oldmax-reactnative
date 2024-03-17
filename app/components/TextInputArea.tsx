@@ -12,6 +12,7 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
+import fonts from '../config/fonts';
 
 interface TextInputAreaProps extends TextInputProps {
   placeholder?: string;
@@ -44,11 +45,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bgSecond,
     minHeight: responsiveHeight(20),
     borderRadius: responsiveWidth(2),
-    paddingVertical: responsiveWidth(2),
   },
   input: {
     width: '100%',
     paddingHorizontal: responsiveWidth(2),
-    color: colors.black,
+    color: colors.white,
+    fontFamily: fonts.regular,
   },
 });

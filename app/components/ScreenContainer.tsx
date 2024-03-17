@@ -6,6 +6,8 @@ import {
   StyleSheet,
   View,
   StatusBarStyle,
+  ViewStyle,
+  StyleProp,
 } from 'react-native';
 
 // file import's
@@ -15,12 +17,14 @@ interface ScreenContainerProps extends StatusBarProps {
   children?: any;
   backgroundColor?: string;
   barStyle?: null | StatusBarStyle | undefined;
+  containerStyle?: StyleProp<ViewStyle> | undefined;
 }
 
 const ScreenContainer: React.FC<ScreenContainerProps> = ({
   children,
   barStyle,
   backgroundColor,
+  containerStyle,
   ...props
 }) => {
   return (
@@ -30,7 +34,7 @@ const ScreenContainer: React.FC<ScreenContainerProps> = ({
         backgroundColor={backgroundColor ? backgroundColor : colors.primary}
         {...props}
       />
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, containerStyle]}>
         <View style={styles.mainContainer}>{children}</View>
       </SafeAreaView>
     </>

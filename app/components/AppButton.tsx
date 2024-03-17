@@ -11,6 +11,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import fonts from '../config/fonts';
 
 interface AppButtonProps extends TouchableOpacityProps {
   title: string;
@@ -51,5 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     borderRadius: responsiveWidth(6),
   },
-  labelTitleStyle: {},
+  labelTitleStyle: {
+    fontFamily: fonts.regular,
+  },
 });
