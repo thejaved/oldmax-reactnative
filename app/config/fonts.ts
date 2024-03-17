@@ -1,3 +1,5 @@
 export default {
-  regular: 'MadimiOne-Regular',
+  bold: 'OpenSans-Bold',
+  light: 'OpenSans-Light',
+  regular: 'OpenSans-Regular',
 };

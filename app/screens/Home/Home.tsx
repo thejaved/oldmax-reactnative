@@ -3,6 +3,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {
   responsiveFontSize,
+  responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
@@ -17,7 +18,9 @@ import fonts from '../../config/fonts';
 class Home extends HomeController {
   render() {
     return (
-      <ScreenContainer containerStyle={styles.containerStyle}>
+      <ScreenContainer
+        backgroundColor={colors.bgColor}
+        containerStyle={styles.containerStyle}>
         <View style={styles.locationStyle}>
           <Entypo
             name="location-pin"
@@ -32,14 +35,21 @@ class Home extends HomeController {
             style={styles.arrowDownStyle}
           />
         </View>
-        <AppInput
-          IconName="search1"
-          IconComponent={AntDesign}
-          placeholderTextColor={colors.white}
-          placeholder="Find cars, mobile, phones and more..."
-        />
+        <TouchableOpacity style={styles.openInput}>
+          <AntDesign
+            name="search1"
+            color={colors.white}
+            size={responsiveFontSize(2.5)}
+          />
+          <Text style={styles.textStyle}>
+            Search for Cars, Mobiles, Phones, and Beyond...
+          </Text>
+        </TouchableOpacity>
+        <View style={styles.sliderContainer}>
+          <View style={styles.demoSlider}></View>
+        </View>
         <View style={styles.rowStyle}>
-          <Text style={styles.headText}>Browse Categories</Text>
+          <Text style={styles.headText}>Discover Categories</Text>
           <TouchableOpacity>
             <Text style={styles.textViewStyle}>View All</Text>
           </TouchableOpacity>
@@ -50,6 +60,7 @@ class Home extends HomeController {
           <Categories lableCataegries="Laptops" Icon={icon3} />
           <Categories lableCataegries="Mobiles" Icon={icon4} />
         </View>
+        <Text style={styles.freshRecommeTextStyle}>Freshly Recommended</Text>
       </ScreenContainer>
     );
   }
@@ -73,22 +84,54 @@ const styles = StyleSheet.create({
   arrowDownStyle: {
     marginLeft: responsiveWidth(2),
   },
+  openInput: {
+    width: '100%',
+    height: responsiveHeight(6),
+    backgroundColor: colors.bgSecond,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: responsiveWidth(2),
+    borderRadius: responsiveWidth(2),
+  },
+  textStyle: {
+    color: colors.white,
+    fontFamily: fonts.regular,
+    marginLeft: responsiveWidth(2),
+  },
   rowStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: responsiveWidth(5),
+    marginVertical: responsiveWidth(3),
   },
   headText: {
     color: colors.white,
     fontSize: responsiveFontSize(2),
+    fontFamily: fonts.bold,
   },
   textViewStyle: {
     color: colors.primary,
+    fontFamily: fonts.bold,
   },
   categorieStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  sliderContainer: {
+    paddingVertical: responsiveWidth(5),
+  },
+  demoSlider: {
+    width: '100%',
+    height: responsiveHeight(20),
+    backgroundColor: colors.primary,
+    borderRadius: responsiveWidth(2),
+  },
+  freshRecommeTextStyle: {
+    color: colors.white,
+    fontFamily: fonts.regular,
+    fontSize: responsiveFontSize(2.5),
+    marginTop: responsiveWidth(10),
+    marginBottom: responsiveWidth(2),
   },
 });
 

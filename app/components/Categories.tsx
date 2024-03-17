@@ -7,10 +7,11 @@ import {
   TouchableOpacityProps,
   View,
 } from 'react-native';
+import {responsiveWidth} from 'react-native-responsive-dimensions';
 
 // file import's
 import {colors} from '../config';
-import {responsiveWidth} from 'react-native-responsive-dimensions';
+import fonts from '../config/fonts';
 
 interface CategoriesProps extends TouchableOpacityProps {
   Icon: any;
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
   lableCategorieStyle: {
     color: colors.white,
     marginTop: responsiveWidth(2),
+    fontFamily: fonts.regular,
   },
 });
 

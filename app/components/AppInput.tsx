@@ -14,6 +14,7 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {IconProps} from 'react-native-vector-icons/Icon';
+import fonts from '../config/fonts';
 
 interface AppInputProps extends TextInputProps {
   placeholder?: string;
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
     color: colors.black,
     borderRadius: responsiveWidth(2),
     paddingHorizontal: responsiveWidth(2),
+    fontFamily: fonts.regular,
   },
   iconStyle: {
     paddingRight: responsiveWidth(1),
