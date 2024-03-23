@@ -1,4 +1,4 @@
-package com.imagegen
+package com.Oldmax
 
 import android.app.Application
 import com.facebook.react.PackageList
