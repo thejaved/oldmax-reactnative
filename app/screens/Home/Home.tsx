@@ -12,7 +12,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../../config';
 import HomeController from './HomeController';
 import {icon1, icon2, icon3, icon4} from '../../assets/images';
-import {Categories, ScreenContainer} from '../../components';
+import {AppInput, Categories, ScreenContainer} from '../../components';
 import fonts from '../../config/fonts';
 
 class Home extends HomeController {
